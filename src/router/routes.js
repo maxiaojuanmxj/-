@@ -3,7 +3,8 @@ import Classify from '../pages/Classify/Classify.vue'
 import Things from '../pages/Things/Things.vue'
 import Shop from '../pages/Shop/Shop.vue'
 import Personage from '../pages/Personage/Personage.vue'
-import login from '../pages/login/login.vue'
+import Phonelogin from '../pages/Personage/components/Phonelogin/Phonelogin.vue'
+import Emaillogin from '../pages/Personage/components/emaillogin/Emaillogin.vue'
 
 export default [
   {
@@ -37,13 +38,14 @@ export default [
   {
     path:'/personage',
     component:Personage,
-    meta:{
-      isShow:true
-    }
   },
   {
-    path:'/login',
-    component:login
+    path:'/phonelogin',
+    component:Phonelogin,
+  },
+  {
+    path:'/emaillogin',
+    component:Emaillogin,
   },
   {
     path:'/',
