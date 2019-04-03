@@ -138,6 +138,10 @@
         font-size 28px
         border 1px solid #333
         border-radius  10px
+    .login_help
+      display flex
+      justify-content space-between
+      font-size 28px
     .phone_login,.email_login
       width 679px
       height 98px

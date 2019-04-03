@@ -1,10 +1,10 @@
 <template>
   <div class="header_box">
     <i class="iconfont icon-shouye" @click="$router.push('/home')"></i>
-    <div class="faxian" :class="{on:isOn}" @click="isOn=true">
+    <div class="faxian" :class="{on:$route.path==='/things/section'}" @click="goto('/things/section')">
       <span>发现</span>
     </div>
-    <div class="wanjia" :class="{on:!isOn}" @click="isOn=false">
+    <div class="faxian" :class="{on:$route.path==='/things/find'}" @click="goto('/things/find')">
       <span>甄玩家</span>
     </div>
     <i class="iconfont icon-icon"></i>
@@ -14,9 +14,9 @@
 
 <script>
 export default{
-  data(){
-    return{
-      isOn:true
+  methods:{
+    goto(path){
+      this.$router.replace(path)
     }
   }
 }
@@ -36,13 +36,11 @@ export default{
     display flex
     align-items center
     justify-content space-around
-
     div
       font-size 30px
       &.on
         font-weight 700
         color #b4282d
     i
-
       font-size 40px
 </style>

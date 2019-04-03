@@ -1,10 +1,11 @@
 import axios from  'axios'
 
-export default function ajax(url,data={},method='GET') {
+export default function ajax(url,data='',method='GET') {
   return new Promise((resolve,reject)=>{
     let Promise;
     if(method==='GET'){
-      Promise=axios.get(url,{params: data})
+      console.log(url);
+      Promise=axios.get(url,data)
     }else if (method==='POST'){
       Promise=axios.post(url,data)
     }

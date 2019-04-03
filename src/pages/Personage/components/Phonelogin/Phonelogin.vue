@@ -17,12 +17,11 @@
         <input type="text" placeholder="请输入手机验证码" v-model="code"/>
         <div class="get_phone_code">获取验证码</div>
       </label>
-
       <div class="login_help">
         <span>遇到问题? </span>
         <span>使用密码验证登录</span>
       </div>
-      <div class="phone_login active" @click="$router.push('/home')">
+      <div class="phone_login active">
         <span @click="toLogin">登录</span>
       </div>
       <div class="email_login" @click="$router.push('/personage')">
@@ -70,9 +69,12 @@
         if(! /^1\d{10}$/.test(this.phone) && !/^\d{6}$/.test(this.code) ){
 //          return alert('请输入正确的手机号')
 //        }else if(){
+
           return alert('请输入正确的手机号和验证码')
+
         }else{
           return alert('登录成功')
+
         }
       }
 
@@ -144,6 +146,10 @@
         font-size 28px
         border 1px solid #333
         border-radius  10px
+    .login_help
+      display flex
+      justify-content space-between
+      font-size 28px
     .phone_login,.email_login
       width 679px
       height 98px

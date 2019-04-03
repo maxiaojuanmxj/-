@@ -5,7 +5,8 @@ import Shop from '../pages/Shop/Shop.vue'
 import Personage from '../pages/Personage/Personage.vue'
 import Phonelogin from '../pages/Personage/components/Phonelogin/Phonelogin.vue'
 import Emaillogin from '../pages/Personage/components/emaillogin/Emaillogin.vue'
-
+import section from '../pages/Things/section/section.vue'
+import find from '../pages/Things/find/find.vue'
 export default [
   {
     path:'/home',
@@ -24,9 +25,26 @@ export default [
   {
     path:'/things',
     component:Things,
+    // redirect:'/things/section',
     meta:{
       isShow:true
-    }
+    },
+    children:[
+      {
+      path:'/things/section',
+      component:section,
+      meta:{
+        isShow:true
+      }
+      },
+      {
+        path:'/things/find',
+        component:find,
+        meta:{
+          isShow:true
+        }
+      }
+    ]
   },
   {
     path:'/shop',
