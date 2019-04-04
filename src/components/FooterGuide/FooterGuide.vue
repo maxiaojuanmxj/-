@@ -12,7 +12,7 @@
       </span>
       <span>分类</span>
     </a>
-    <a href="javascript:;" @click="goto('things/section')" :class="{on:$route.path.indexOf('/things')>=0}"  class="guide_item">
+    <a href="javascript:;" @click="goto('/things/section')" :class="{on:$route.path.indexOf('/things')>=0}"  class="guide_item">
       <span class="item_icon">
         <i class="iconfont icon-shiwu"></i>
       </span>

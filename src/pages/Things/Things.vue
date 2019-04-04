@@ -8,7 +8,7 @@
       <div class="faxian" :class="{on:$route.path==='/things/find'}" @click="goto('/things/find')">
         <span>甄玩家</span>
       </div>
-      <i class="iconfont icon-icon"></i>
+      <i class="iconfont icon-sousuo" @click="$router.push('/search')"></i>
       <i class="iconfont icon-gouwuche"></i>
     </div>
     <div class="things_tab">
@@ -78,6 +78,7 @@
     display flex
     align-items center
     justify-content space-around
+    z-index 10
     div
       font-size 30px
       &.on
@@ -93,7 +94,9 @@
     height 76px
     border-top 1px solid #ccc
     top 88px
-    overflow hidden
+    /*overflow hidden*/
+    z-index 10
+    background-color white
     ul
       width 1180px
       height 76px

@@ -7,6 +7,7 @@ import Phonelogin from '../pages/Personage/components/Phonelogin/Phonelogin.vue'
 import Emaillogin from '../pages/Personage/components/emaillogin/Emaillogin.vue'
 import section from '../pages/Things/section/section.vue'
 import find from '../pages/Things/find/find.vue'
+import search from '../pages/search/search.vue'
 export default [
   {
     path:'/home',
@@ -21,6 +22,10 @@ export default [
     meta:{
       isShow:true
     }
+  },
+  {
+    path:'/search',
+    component:search,
   },
   {
     path:'/things',

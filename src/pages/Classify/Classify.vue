@@ -1,7 +1,7 @@
 <template>
   <div class="category_box" v-if="categoryDate.categoryL1List">
     <div class="category_header">
-      <div class="search_box">
+      <div class="search_box" @click="$router.push('/search')">
         <div>
           <img src="//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png" alt="search">
           <span>搜索商品，共19999件好物</span>

@@ -7,7 +7,7 @@
     <div class="faxian" :class="{on:$route.path==='/things/find'}" @click="goto('/things/find')">
       <span>甄玩家</span>
     </div>
-    <i class="iconfont icon-icon"></i>
+    <i class="iconfont icon-sousuo"></i>
     <i class="iconfont icon-gouwuche"></i>
   </div>
 </template>

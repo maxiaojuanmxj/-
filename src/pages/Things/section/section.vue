@@ -9,23 +9,39 @@
                 <div class="wrapper">
                   <div class="left_top">
                     <div class="line1">
-                      <img src="https://yanxuan.nosdn.127.net/98c2a37d4e393f98370ada51202d8ed7.png" alt="">
-                      <span>网易员工精选</span>
+                      <img :src="topic.avatar" alt="">
+                      <span>{{topic.nickname}}</span>
                     </div>
-                    <h3 class="line2 ellipsis">跟着网易员工什么羊毛，又准又狠</h3>
-                    <p class="line3">15款爆品限时特价，低至6.5折</p>
+                    <h3 class="line2 ellipsis">{{topic.title}}</h3>
+                    <p class="line3">{{topic.subTitle}}</p>
                     <h6 class="line4">
                       <i class="iconfont icon-weibo"></i>
-                      <span>10.8K 人看过</span>
+                      <span>{{topic.readCount}}K 人看过</span>
                     </h6>
                   </div>
-                  <img src="https://yanxuan.nosdn.127.net/c963b95252d629ad0634a92b4d92457e.jpg" alt="" />
+                  <img :src="topic.picUrl" alt="" />
                 </div>
               </div>
               <div class="split_box"></div>
             </li>
           </ul>
-
+          <ul class="ULleft" v-for="(topic,index) in section.topics" :key="index" v-if="topic.type===0">
+            <li>
+              <div class="line_show_box">
+                <div class="line1">
+                  <img :src="topic.avatar" alt="">
+                  <span>{{topic.nickname}}</span>
+                </div>
+                <p>{{topic.title}}</p>
+                <img :src="topic.picUrl" alt="">
+                <h6 class="line4">
+                  <i class="iconfont icon-weibo"></i>
+                  <span>{{topic.readCount}}K 人看过</span>
+                </h6>
+              </div>
+              <div class="split_box"></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -33,6 +49,7 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 import {reqThingsManual} from '../../../api/index'
 export default{
   data(){
@@ -44,6 +61,13 @@ export default{
     const sections=await reqThingsManual()
     this.sections=sections.data
     console.log(this.sections)
+  },
+  watch:{
+    sections(){
+      this.$nextTick(()=>{
+        new BScroll('.things_content_wrap')
+      })
+    }
   }
 }
 </script>
@@ -52,14 +76,16 @@ export default{
   @import "../../../../static/css/reset.css"
   .things_content_wrap
     width 100%
-    min-height 1332px
+    height 1000px
     box-sizing border-box
     padding 163px 0 100px 0
+    margin-top 165px
     .things_content
-      width 100%
-      max-height 1070px
-      overflow hidden
       box-sizing border-box
+      padding-top 10px
+      width 100%
+      /*height 3000px  不需要*/
+      overflow hidden
       /*padding-top 30px*/
       background-color #fff
       .UlTwo
@@ -98,10 +124,6 @@ export default{
                 color #7f7f7f
                 font-size 28px
                 margin 0 0 30px 30px
-              .line4
-                color #999
-                font-size 25px
-                margin 0 30px
             img
               width 278px
               height 278px
@@ -110,10 +132,30 @@ export default{
               height 20px
               background-color #f4f4f4
 
-        .split_box
-          width 100%
-          height 20px
-          margin-top 20px
-          background-color #f4f4f4
 
+      .ULleft
+        .line_show_box
+          width 100%
+          box-sizing border-box
+          background-color white
+          padding-top 20px
+          .line1
+            color #000
+            margin 0 30px 20px
+            font-size 28px
+            img
+              width 40px
+              height 40px
+              margin 0 20px 0 0
+              border-radius 50%
+              vertical-align middle
+            span
+              vertical-align middle
+          p
+            font-size 36px
+            margin 0 30px 15px
+          >img
+            width 700px
+            height 388px
+            margin 0 30px 15px
 </style>

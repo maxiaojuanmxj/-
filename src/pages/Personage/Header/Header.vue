@@ -2,8 +2,8 @@
   <div class="header_box">
     <i class="iconfont icon-shouye" @click="$router.push('/home')"></i>
     <h2>网易严选</h2>
-    <i class="iconfont icon-icon"></i>
-    <i class="iconfont icon-gouwuche"></i>
+    <i class="iconfont icon-sousuo" @click="$router.push('/search')"></i>
+    <i class="iconfont icon-gouwuche" @click="$router.push('/shop')"></i>
   </div>
 </template>
 

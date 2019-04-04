@@ -1,11 +1,15 @@
 <template>
   <div class="line">
     <a href="" class="logo"></a>
-    <div class="m-topSearchIpt">
+    <!--<div class="m-topSearchIpt" @click="$router.push('/search')">
       <i class="iconfont icon-sousuo"></i>
       <span class="placeholder">搜索商品, 共22110款好物</span>
+    </div>-->
+    <div class="input_label" @click="$router.push('/search')">
+      <i class="iconfont icon-sousuo"></i>
+      <input type="text" placeholder="搜索商品, 共22110款好物">
     </div>
-    <div class="login">登录</div>
+    <div class="login" @click="$router.push('/personage')">登录</div>
   </div>
 </template>
 
@@ -37,7 +41,7 @@
       background-position center
       background-repeat no-repeat
       margin 11px 20px 0 0
-    .m-topSearchIpt
+    /*.m-topSearchIpt
       width 442px
       height 56px
       background #ededed
@@ -49,7 +53,22 @@
         vertical-align middle
         width 28px
         height 28px
+        font-size 30px*/
+    .input_label
+      width 442px
+      height 56px
+      background-color #f4f4f4
+      display flex
+      /*justify-content center*/
+      align-items center
+      border-radius 10px
+      .iconfont
         font-size 30px
+        margin 0 10px
+      input
+        font-size 26px
+        background-color #f4f4f4
+        outline 0 none
     .login
       width 74px
       height 40px
